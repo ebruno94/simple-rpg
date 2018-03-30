@@ -14,6 +14,7 @@ export class AppComponent {
 
   setCurrentCharacter(newCharacter: Character){
     this.currentCharacter = newCharacter;
+    this.startClicked = false;
   }
 
   setFighting(flag: boolean){

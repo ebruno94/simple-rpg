@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CharacterCreateComponent } from './character-create/character-create.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CharacterDisplayComponent } from './character-display/character-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterCreateComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CharacterDisplayComponent
   ],
   imports: [
     BrowserModule,
