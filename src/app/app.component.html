@@ -1,3 +1,4 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <app-welcome (childStartButton)="startGame()"></app-welcome>
+  <app-character-create [childStartButtonClicked]=(startClicked) (sendCurrentCharacter)="setCurrentCharacter($event)"></app-character-create>
+</div>

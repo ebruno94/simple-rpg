@@ -26,3 +26,5 @@ export function createKeyArray(){
   }
   return tempArray;
 }
+
+export let itemList: Item[];
