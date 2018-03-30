@@ -2,27 +2,37 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
-## Development server
+#### LET'S PLAY SOME A SIMPE RPG!! 3/23/2018
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### By **Ernest Bruno**
 
-## Code scaffolding
+## Description
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+A website / program that lets users create a character with a name and pick a class for said character. The users are able to fight monsters that appear based on the character's level, they are able to cast spells and use items during the battle sequence. User obtains an item when monster is killed (BUGGED)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Setup/Installation Requirements
 
-## Running unit tests
+1. Clone this repository from GitHub.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-## Running end-to-end tests
+## Known Bugs
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+* Only button is displayed when user obtains item from killed monster.
 
-## Further help
+## Technologies Used
+* HTML
+* CSS
+* Javascript / Typescript
+* Angular2
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Support and contact details
+
+_Email me @ ernest.bruno94@yahoo.com for questions, comments, or concerns._
+
+### License
+
+*{This software is licensed under the MIT license}*
+
+Copyright (c) 2018 **_{Ernest Bruno}_**
