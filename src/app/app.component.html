@@ -1,6 +1,6 @@
 <div class="container">
   <app-welcome (childStartButton)="startGame()"></app-welcome>
   <app-character-create [childStartButtonClicked]=(startClicked) (sendCurrentCharacter)="setCurrentCharacter($event)"></app-character-create>
-  <app-character-display *ngIf="currentCharacter && !isFighting" [childCurrentCharacter]="currentCharacter" (childInitiateFight)="setFighting();"></app-character-display>
-  <app-battle-seq *ngIf="isFighting"></app-battle-seq>
+  <app-character-display *ngIf="currentCharacter && !isFighting" [childCurrentCharacter]="currentCharacter" (childInitiateFight)="setFighting(); setCurrentMonster();"></app-character-display>
+  <app-battle-seq *ngIf="currentCharacter && isFighting && currentCharacter.hp > 0 && currentMonster.hp > 0" [currentMonster]="currentMonster" [childCurrentCharacter]="currentCharacter" (setFighting)="setFighting()"></app-battle-seq>
 </div>

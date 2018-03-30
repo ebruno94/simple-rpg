@@ -1,4 +1,6 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Monster, monsterFactory } from './../models/Monster';
+import { Character } from './../models/Character';
 
 @Component({
   selector: 'app-battle-seq',
@@ -6,6 +8,15 @@ import { Component, Input} from '@angular/core';
   styleUrls: ['./battle-seq.component.css']
 })
 export class BattleSeqComponent {
-  @Input() childIsFighting: boolean = false;
+  @Input() currentMonster: Monster = null;
+  @Input() childCurrentCharacter: Character = null;
+  @Output() setFighting = new EventEmitter();
 
+  ifDead(){
+    if(this.currentMonster.hp <= 0){
+      this.childCurrentCharacter.setExp(this.currentMonster.killExp);
+      this.childCurrentCharacter.items.push(this.currentMonster.item);
+      this.setFighting.emit();
+    }
+  }
 }
