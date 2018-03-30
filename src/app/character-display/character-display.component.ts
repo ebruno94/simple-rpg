@@ -8,5 +8,9 @@ import { Character } from './../models/Character';
 })
 export class CharacterDisplayComponent  {
   @Input() childCurrentCharacter: Character = null;
+  @Output() childInitiateFight = new EventEmitter();
 
+  initiateFight(){
+    this.childInitiateFight.emit();
+  }
 }

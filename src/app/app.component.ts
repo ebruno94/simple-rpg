@@ -17,12 +17,11 @@ export class AppComponent {
     this.startClicked = false;
   }
 
-  setFighting(flag: boolean){
-    this.isFighting = flag;
+  setFighting(){
+    this.isFighting = !this.isFighting;
   }
 
   startGame(){
-    this.startClicked = true;
-    console.log(this.startClicked);
+    this.startClicked = true;;
   }
 }
