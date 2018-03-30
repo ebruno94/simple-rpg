@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CharacterCreateComponent } from './character-create/character-create.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CharacterDisplayComponent } from './character-display/character-display.component';
+import { BattleSeqComponent } from './battle-seq/battle-seq.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterCreateComponent,
     WelcomeComponent,
-    CharacterDisplayComponent
+    CharacterDisplayComponent,
+    BattleSeqComponent
   ],
   imports: [
     BrowserModule,
