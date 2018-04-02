@@ -19,7 +19,7 @@ A website / program that lets users create a character with a name and pick a cl
 
 ## Known Bugs
 
-* Only button is displayed when user obtains item from killed monster.
+* None so far.
 
 ## Technologies Used
 * HTML
