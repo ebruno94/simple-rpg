@@ -1,0 +1,31 @@
+#battleSequence{
+    background-image: url('https://i.pinimg.com/originals/73/e7/1f/73e71fd636407bd0e659f0f664dd136a.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+    text-align: center;
+}
+#battleSequence button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#monsterContainer{
+    background-color: white;
+    box-shadow: 0px 0px 15px black inset;
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.useItem{
+    font-size: 12px;
+    padding: 10px;
+}
+
+#itemList .col-md-3{
+    background-image: url('https://i.pinimg.com/originals/eb/33/5e/eb335ea3b222a8941f4431baa69d205c.jpg');
+    background-size: cover;
+}

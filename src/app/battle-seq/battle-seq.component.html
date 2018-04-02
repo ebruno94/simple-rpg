@@ -1,33 +1,50 @@
-<div class="container">
+<div class="container" id="battleSequence">
   <div class="row">
     <div class="col-md-12">
+        <br><br><br>
       <h1>THIS IS THE BATTLE SCENE</h1>
-      <h1>YOU ARE FIGHTING</h1>
-      <h1>{{currentMonster.name}} (Lv. {{currentMonster.level}})</h1>
-      <h2>HP: {{currentMonster.hp}}/{{currentMonster.maxHp}}</h2>
+      <hr>
+      <div class="container" id="monsterContainer">
+          <h1>YOU ARE FIGHTING</h1>
+          <h1>{{currentMonster.name}} (Lv. {{currentMonster.level}})</h1>
+          <h2>HP: {{currentMonster.hp}}/{{currentMonster.maxHp}}</h2>
+      </div>
     </div>
   </div>
   <hr>
   <div class="row">
     <div class="col-md-6">
-      <h1>{{childCurrentCharacter.name}}</h1>
-      <h2>HP: {{childCurrentCharacter.hp}}/{{childCurrentCharacter.maxHp}}</h2>
-      <h2>MP: {{childCurrentCharacter.mp}}/{{childCurrentCharacter.maxMp}}</h2>
+      <h4>{{childCurrentCharacter.name}}</h4>
+      <p>HP: {{childCurrentCharacter.hp}}/{{childCurrentCharacter.maxHp}}</p>
+      <p>MP: {{childCurrentCharacter.mp}}/{{childCurrentCharacter.maxMp}}</p>
     </div>
     <div class="col-md-6">
-      <button type="button" class="btn" (click)="childCurrentCharacter.attack(currentMonster); currentMonster.attack(childCurrentCharacter); ifDead()">ATTACK!</button>
-      <select #selectedAbility>
-    <option *ngFor="let ability of childCurrentCharacter.abilities; let i = index" [value]="i">{{ability.name}}</option>
-      </select>
-      <button type="button" (click)="childCurrentCharacter.abilities[selectedAbility.value].cast(childCurrentCharacter, currentMonster); currentMonster.attack(childCurrentCharacter); ifDead()">CAST</button>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Basic Attack</h4>
+                <button type="button" class="btn" (click)="childCurrentCharacter.attack(currentMonster); currentMonster.attack(childCurrentCharacter); ifDead()">ATTACK!</button>
+            </div>
+            <div class="col-md-6">
+                <h4>Cast an Ability!</h4>
+                <select #selectedAbility>
+                    <option *ngFor="let ability of childCurrentCharacter.abilities; let i = index" [value]="i">{{ability.name}}</option>
+                </select><br><br>
+                <button type="button" class="btn" (click)="childCurrentCharacter.abilities[selectedAbility.value].cast(childCurrentCharacter, currentMonster); currentMonster.attack(childCurrentCharacter); ifDead()">CAST</button>
+            </div>
+        </div>
     </div>
-    <h2>ITEMS</h2>
-    <div class="itemList">
-      <div *ngFor="let item of childCurrentCharacter.items; let i = index">
-        <img src="">
-        <h2>{{item.name}}</h2>
-        <button type="button" class="btn" (click)="childCurrentCharacter.useItem(item, i)">Use Item</button>
-      </div>
+    <hr>
+    <div class="container" id="itemList">
+        <h4>ITEMS</h4>
+        <hr>
+        <div class="row">
+          <div class="col-md-2"*ngFor="let item of childCurrentCharacter.items; let i = index">
+            <img src="{{item.img}}">
+            <p><strong>{{item.name}}</strong></p>
+            <button type="button" class="btn useItem" (click)="childCurrentCharacter.useItem(item, i)">Use Item</button>
+          </div>
+        </div>
     </div>
+    <br><br>
   </div>
 </div>
