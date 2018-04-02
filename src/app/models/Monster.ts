@@ -8,9 +8,8 @@ export class Monster{
     this.item = (function(){
       let randomNumber = Math.floor(Math.random() * Object.keys(itemsLibrary).length);
       let keyArray = createKeyArray();
-      console.log(keyArray);
-      return itemsLibrary[keyArray[randomNumber]];
-    })
+      return itemsLibrary[keyArray[randomNumber]]();
+    })();
   }
 
   attack(target: Character){
