@@ -1,26 +1,32 @@
-<div class="container">
+<div class="container" id="characterDisplay">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
+        <br><br><br><br>
       <h1>{{childCurrentCharacter.name}}</h1>
       <h2>Class: {{childCurrentCharacter.charClass}}</h2>
       <hr>
-      <h5>HP: {{childCurrentCharacter.hp}}/{{childCurrentCharacter.maxHp}}</h5>
-      <h5>MP: {{childCurrentCharacter.mp}}/{{childCurrentCharacter.maxMp}}</h5>
-      <h5>XP: {{childCurrentCharacter.exp}}/{{childCurrentCharacter.maxExp}}</h5>
+      <h4>HP: {{childCurrentCharacter.hp}}/{{childCurrentCharacter.maxHp}}</h4>
+      <h4>MP: {{childCurrentCharacter.mp}}/{{childCurrentCharacter.maxMp}}</h4>
+      <h3>XP: {{childCurrentCharacter.exp}}/{{childCurrentCharacter.maxExp}}</h3>
       <hr>
-      <h3>STATS</h3>
+      <h1>STATS</h1>
+      <hr>
       <div class="row">
         <div class="col-md-6">
-          <h5>STR: {{childCurrentCharacter.str}}</h5>
-          <h5>INT: {{childCurrentCharacter.int}}</h5>
-          <h5>DEX: {{childCurrentCharacter.dex}}</h5>
+          <h4>STR: {{childCurrentCharacter.str}}</h4>
+          <h4>INT: {{childCurrentCharacter.int}}</h4>
+          <h4>DEX: {{childCurrentCharacter.dex}}</h4>
         </div>
         <div class="col-md-6">
-          <h5>DEF: {{childCurrentCharacter.def}}</h5>
-          <h5>LUCK: {{childCurrentCharacter.luck}}</h5>
+          <h4>DEF: {{childCurrentCharacter.def}}</h4>
+          <h4>LUCK: {{childCurrentCharacter.luck}}</h4>
         </div>
       </div>
     </div>
   </div>
+  <br>
+  <hr>
+  <br>
   <button type="button" class="btn" (click)="initiateFight()">Initiate Fight!</button>
+  <br><br><br>
 </div>
