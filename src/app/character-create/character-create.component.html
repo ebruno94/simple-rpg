@@ -1,45 +1,62 @@
 <div *ngIf="!currentCharacter && childStartButtonClicked">
   <div class="container" id="characterCreationForm">
-    <h1>Create A New Character</h1>
     <form>
           <div class="row">
             <div class="col-md-6">
+                <br><br><br>
+            <h1>Create A New Character</h1>
+            <hr>
               <div>
                 <label>Character Name</label>
                 <input #charName type="text" name="charName">
               </div>
               <div>
                 <div>
+                    <br>
                   <label>Choose Your Class</label>
                   <select #charClassSelect ([ngModel])="charClass">
                     <option value="Vanguard">Vanguard
                     <option value="Skirmisher">Skirmisher
                     <option value="Elementalist">Elementalist
                   </select>
+                  <br><br>
                   <button type="button" class="btn" (click)="charClassSelect.value === charClassSelect.value">PREVIEW!</button>
                 </div>
               </div>
+              <br><br><br><br><br><br><br>
+              <button type="button" class="btn" (click)="createCharacter(charName.value, charClassSelect.value);"> Create Character </button>
             </div>
 
             <div class="col-md-6">
               <div *ngIf="charClassSelect.value === 'Vanguard'">
+                  <br><br><br>
                 <h1>VANGUARD</h1>
-                <img src="https://pre00.deviantart.net/176d/th/pre/f/2016/002/3/9/demonknight_by_rotaken-d9mi82y.png" height="400" width="300">
-                <p>Vanguards are known for their strength and unwavering toughness. They can withstand enemy attacks with ease, and deal heavy blows with both shield and sword. They are deadly, but their strength comes with very slow movement, making them an easy target for faster opponents</p>
+                <hr>
+                <img src="https://pre00.deviantart.net/176d/th/pre/f/2016/002/3/9/demonknight_by_rotaken-d9mi82y.png" height="300" width="250">
+                <hr>
+                <p><strong>Vanguards are known for their strength and unwavering toughness. They can withstand enemy attacks with ease, and deal heavy blows with both shield and sword. They are deadly, but their strength comes with very slow movement, making them an easy target for faster opponents</strong></p>
+                <br><br>
               </div>
               <div *ngIf="charClassSelect.value === 'Skirmisher'">
+                  <br><br><br>
                 <h1>SKIRMISHER</h1>
-                <img src="https://img00.deviantart.net/2230/i/2017/035/0/8/dailyknight_8_by_rotaken-daxuj42.png" height="400" width="300">
-                <p>Skirmishers are not afraid to venture unto the darkest part of the land due to their quick-thinking, and their swift and deadly attacks. They are versatile in weaponry, but mainly uses the short sword, dagger and bows for maximum mobility. They may be quick, but one good hit from an enemy greatly affects a Skirmisher.</p>
+                <hr>
+                <img src="https://img00.deviantart.net/2230/i/2017/035/0/8/dailyknight_8_by_rotaken-daxuj42.png" height="300" width="250">
+                <hr>
+                <p><strong>Skirmishers are not afraid to venture unto the darkest part of the land due to their quick-thinking, and their swift and deadly attacks. They are versatile in weaponry, but mainly use the short sword, dagger and bows for maximum mobility. They may be quick, but they are very squishy.</strong></p>
+                <br><br>
               </div>
               <div *ngIf="charClassSelect.value === 'Elementalist'">
+                  <br><br><br>
                 <h1>ELEMENTALIST</h1>
-                <img src="https://pre00.deviantart.net/9e44/th/pre/f/2015/239/2/2/shroomlock_by_rotaken-d97dc0u.png" height="400" width="300">
-                <p>Masters of the elements, Elementalists can conjure magic and use the natural elements to slay multiple foes at once. Most of them travel alone with their staves, fearing that their strong magic will consume the purest of souls and bring them to the dark side. They fight from a distance and cast magic to prevent enemies from closing in, but once approached and cornered, they fall swiftly.</p>
+                <hr>
+                <img src="https://pre00.deviantart.net/9e44/th/pre/f/2015/239/2/2/shroomlock_by_rotaken-d97dc0u.png" height="300" width="250">
+                <hr>
+                <p><strong>Masters of the elements, Elementalists can conjure magic and use the natural elements to slay multiple foes at once. Most of them travel alone with their staves. They fight from a distance and cast magic to prevent enemies from closing in, but fall swiftly when approached.</strong></p>
+                <br><br>
               </div>
             </div>
         </div>
-        <button type="button" class="btn" (click)="createCharacter(charName.value, charClassSelect.value);"> Create Character </button>
     </form>
   </div>
 </div>
