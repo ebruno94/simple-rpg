@@ -12,6 +12,8 @@ export class BattleSeqComponent {
   @Input() childCurrentCharacter: Character = null;
   @Output() setFighting = new EventEmitter();
 
+
+  logs: string[] = [];
   ifDead(){
     if(this.currentMonster.hp <= 0){
       this.childCurrentCharacter.setExp(this.currentMonster.killExp);
@@ -20,9 +22,14 @@ export class BattleSeqComponent {
     }
   }
 
-  initiateCombat(){
+  charAttack(){
     this.childCurrentCharacter.attack(this.currentMonster);
-    setTimeout(this.currentMonster.attack(this.childCurrentCharacter), 2000);
+    this.logs.push(`${this.childCurrentCharacter.name} attacked ${this.currentMonster.name} for ${Math.ceil(this.childCurrentCharacter.str * 1.5)}`);
+  }
+
+  monsterAttack(){
+    this.currentMonster.attack(this.childCurrentCharacter);
+    this.logs.push(`${this.currentMonster.name} attacked ${this.childCurrentCharacter.name} for ${Math.ceil((this.currentMonster.attackDamage * (1.0 + (this.currentMonster.level / 10.0))) - (this.childCurrentCharacter.def * (0.8)))}`);
   }
 
   showItems(){
