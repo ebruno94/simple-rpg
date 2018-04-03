@@ -5,9 +5,12 @@
       <h1>{{childCurrentCharacter.name}}</h1>
       <h2>Class: {{childCurrentCharacter.charClass}}</h2>
       <hr>
+      <progress class="hpBar" value="{{childCurrentCharacter.hp}}" max="{{childCurrentCharacter.maxHp}}"> </progress>
       <h4>HP: {{childCurrentCharacter.hp}}/{{childCurrentCharacter.maxHp}}</h4>
+      <progress class="mpBar" value="{{childCurrentCharacter.mp}}" max="{{childCurrentCharacter.maxMp}}"> </progress>
       <h4>MP: {{childCurrentCharacter.mp}}/{{childCurrentCharacter.maxMp}}</h4>
-      <h3>XP: {{childCurrentCharacter.exp}}/{{childCurrentCharacter.maxExp}}</h3>
+      <progress class="expBar" value="{{childCurrentCharacter.exp}}" max="{{childCurrentCharacter.maxExp}}"> </progress>
+      <h4>XP: {{childCurrentCharacter.exp}}/{{childCurrentCharacter.maxExp}}</h4>
       <hr>
       <h1>STATS</h1>
       <hr>
