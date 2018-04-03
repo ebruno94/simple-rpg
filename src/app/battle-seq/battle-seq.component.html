@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-12">
         <br><br><br>
-      <h1>THIS IS THE BATTLE SCENE</h1>
+      <h6>COMBAT INITIATED</h6>
+      <h3><h1>{{currentMonster.name}} (Lv. {{currentMonster.level}})</h1></h3>
       <hr>
       <div class="container" id="monsterContainer">
-          <h1>YOU ARE FIGHTING</h1>
-          <h1>{{currentMonster.name}} (Lv. {{currentMonster.level}})</h1>
+          <img src="{{currentMonster.img}}"> <br>
           <h2>HP: {{currentMonster.hp}}/{{currentMonster.maxHp}}</h2>
       </div>
     </div>
@@ -39,7 +39,7 @@
         <hr>
         <div class="row">
           <div class="col-md-2"*ngFor="let item of childCurrentCharacter.items; let i = index">
-            <img src="{{item.img}}">
+            <img src="{{item.imgUrlIcon}}">
             <p><strong>{{item.name}}</strong></p>
             <button type="button" class="btn useItem" (click)="childCurrentCharacter.useItem(item, i)">Use Item</button>
           </div>

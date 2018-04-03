@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
-#### LET'S PLAY SOME A SIMPlE RPG!! 3/23/2018
+#### LET'S PLAY SOME A SIMPLE RPG!! 3/23/2018
 
 #### By **Ernest Bruno**
 
