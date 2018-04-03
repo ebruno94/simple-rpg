@@ -14,6 +14,9 @@ export class Monster{
 
   attack(target: Character){
     let damage = Math.ceil((this.attackDamage * (1.0 + (this.level / 10.0))) - (target.def * (0.8)));
+    if (damage < 0){
+      damage = 0;
+    }
     target.hp -= damage;
     console.log(`${this.name} attacked ${target.name} for ${damage}`);
   }

@@ -13,6 +13,9 @@ export class Character{
   useItem(myItem, index){
     myItem.useItem(this);
     this.items.splice(index, 1);
+    if (this.hp > this.maxHp){
+      this.hp = this.maxHp;
+    }
   }
 
   levelUp(){
@@ -39,7 +42,10 @@ export class Character{
   }
 
   attack(target){
-    let damage = Math.ceil(this.str * 1.5)
+    let damage = Math.ceil(this.str * 1.5);
+    if (damage < 0){
+      damage = 0;
+    }
     target.hp -= damage;
     console.log(`${target.name} attacked for ${damage}`)
   }
