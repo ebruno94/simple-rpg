@@ -24,4 +24,13 @@ export class BattleSeqComponent {
     this.childCurrentCharacter.attack(this.currentMonster);
     setTimeout(this.currentMonster.attack(this.childCurrentCharacter), 2000);
   }
+
+  showItems(){
+    let itemDiv = document.getElementById("itemList");
+    if (itemDiv.style.display === "none"){
+      itemDiv.style.display = "block";
+    } else {
+      itemDiv.style.display = "none";
+    }
+  }
 }
