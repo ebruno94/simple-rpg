@@ -14,17 +14,28 @@
                 <div>
                     <br>
                   <label>Choose Your Class</label>
-                  <select #charClassSelect ([ngModel])="charClass">
+                  <select #charClassSelect (change)="$event.target.value">
                     <option value="Vanguard">Vanguard
                     <option value="Skirmisher">Skirmisher
                     <option value="Elementalist">Elementalist
                   </select>
                   <br><br>
-                  <button type="button" class="btn" (click)="charClassSelect.value === charClassSelect.value">PREVIEW!</button>
                 </div>
               </div>
-              <br><br><br><br><br><br><br>
-              <button type="button" class="btn" (click)="createCharacter(charName.value, charClassSelect.value);"> Create Character </button>
+              <hr>
+              <div class="text-center">
+                <h4>CLASS INFO</h4>
+              </div>
+              <hr>
+              <div *ngIf="charClassSelect.value === 'Vanguard'">
+                <p><strong>Vanguards are known for their strength and unwavering toughness. They can withstand enemy attacks with ease, and deal heavy blows with both shield and sword. They are deadly, but their strength comes with very slow movement, making them an easy target for faster opponents.</strong></p>
+              </div>
+              <div *ngIf="charClassSelect.value === 'Skirmisher'">
+                <p><strong>Skirmishers are not afraid to venture unto the darkest part of the land due to their quick-thinking, and their swift and deadly attacks. They are versatile in weaponry, but mainly use the short sword, dagger and bows for maximum mobility. They may be quick, but they are very squishy.</strong></p>
+              </div>
+              <div *ngIf="charClassSelect.value === 'Elementalist'">
+                <p><strong>Masters of the elements, Elementalists can conjure magic and use the natural elements to slay multiple foes at once. Most of them travel alone with their staves. They fight from a distance and cast magic to prevent enemies from closing in, but fall swiftly when approached.</strong></p>
+              </div>
             </div>
 
             <div class="col-md-6">
@@ -33,8 +44,8 @@
                 <h1>VANGUARD</h1>
                 <hr>
                 <img src="https://pre00.deviantart.net/176d/th/pre/f/2016/002/3/9/demonknight_by_rotaken-d9mi82y.png" height="300" width="250">
-                <hr>
-                <p><strong>Vanguards are known for their strength and unwavering toughness. They can withstand enemy attacks with ease, and deal heavy blows with both shield and sword. They are deadly, but their strength comes with very slow movement, making them an easy target for faster opponents</strong></p>
+
+
                 <br><br>
               </div>
               <div *ngIf="charClassSelect.value === 'Skirmisher'">
@@ -42,8 +53,7 @@
                 <h1>SKIRMISHER</h1>
                 <hr>
                 <img src="https://img00.deviantart.net/2230/i/2017/035/0/8/dailyknight_8_by_rotaken-daxuj42.png" height="300" width="250">
-                <hr>
-                <p><strong>Skirmishers are not afraid to venture unto the darkest part of the land due to their quick-thinking, and their swift and deadly attacks. They are versatile in weaponry, but mainly use the short sword, dagger and bows for maximum mobility. They may be quick, but they are very squishy.</strong></p>
+
                 <br><br>
               </div>
               <div *ngIf="charClassSelect.value === 'Elementalist'">
@@ -51,11 +61,14 @@
                 <h1>ELEMENTALIST</h1>
                 <hr>
                 <img src="https://pre00.deviantart.net/9e44/th/pre/f/2015/239/2/2/shroomlock_by_rotaken-d97dc0u.png" height="300" width="250">
-                <hr>
-                <p><strong>Masters of the elements, Elementalists can conjure magic and use the natural elements to slay multiple foes at once. Most of them travel alone with their staves. They fight from a distance and cast magic to prevent enemies from closing in, but fall swiftly when approached.</strong></p>
+
                 <br><br>
               </div>
             </div>
+        </div>
+        <hr>
+        <div class="text-center">
+          <button type="button" class="btn" (click)="createCharacter(charName.value, charClassSelect.value);"> Create Character </button>
         </div>
     </form>
   </div>
