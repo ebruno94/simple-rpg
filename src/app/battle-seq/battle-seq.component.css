@@ -4,7 +4,9 @@
     margin-right: 0px;
     margin-top: 200px;
     margin-bottom: 200px;
-    background-color: white;
+    background-image: url('https://image.freepik.com/free-photo/grunge-paper_1048-5207.jpg');
+    background-repeat: no-repeat;
+    background-size: 1200px 1200px;
     padding: 50px;
     padding-top: 10px;
     text-align: center;
@@ -19,7 +21,10 @@
 }
 
 #monsterContainer{
-    background-color: white;
+    width: 80%;
+    height: 55%;
+    background-image: url('../../assets/img/dungeon.png');
+    background-position: -550px -550px;
     box-shadow: 0px 0px 15px black inset;
     border-radius: 15px;
     padding-top: 20px;
@@ -67,4 +72,16 @@ progress::-webkit-progress-value {
   width: 25px;
   margin-left: auto;
   margin-right: auto;
+}
+
+h6, h3, h4, select, label, p{
+  font-family: 'MedievalSharp', cursive;
+  font-weight: bold;
+  text-shadow: 0px 0px 15px white;
+}
+
+hr{
+  border: 2px solid black;
+  border-radius: 15px;
+  opacity: 0.6;
 }

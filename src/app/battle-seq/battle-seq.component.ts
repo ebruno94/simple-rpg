@@ -19,4 +19,9 @@ export class BattleSeqComponent {
       this.setFighting.emit();
     }
   }
+
+  initiateCombat(){
+    this.childCurrentCharacter.attack(this.currentMonster);
+    setTimeout(this.currentMonster.attack(this.childCurrentCharacter), 2000);
+  }
 }
