@@ -27,10 +27,18 @@ export class BattleSeqComponent {
 
   showItems(){
     let itemDiv = document.getElementById("itemList");
+    let logDiv = document.getElementById("battleLogContainer");
     if (itemDiv.style.display === "none"){
       itemDiv.style.display = "block";
+      logDiv.style.display = "none";
     } else {
       itemDiv.style.display = "none";
+      logDiv.style.display = "block";
     }
+  }
+
+  hideItems(){
+    document.getElementById("itemList").style.display = "none";
+    document.getElementById("battleLogContainer").style.display = "none";
   }
 }

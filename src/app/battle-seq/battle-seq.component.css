@@ -36,6 +36,13 @@
   width: 100px;
 }
 
+#battleLog{
+  height: 60%;
+  width: 80%;
+  background: black;
+  opacity: 0.5;
+}
+
 
 progress {
   width: 300px;

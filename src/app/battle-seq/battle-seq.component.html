@@ -39,7 +39,6 @@
             </div>
         </div>
     </div>
-    <hr>
     <div class="container" style="display: none" id="itemList">
         <h4>ITEMS</h4>
         <hr>
@@ -48,14 +47,18 @@
             <div class="card text-center">
               <img src="{{item.imgUrlIcon}}">
               <p><strong>{{item.name}}</strong></p>
-              <button type="button" class="btn useItem" (click)="childCurrentCharacter.useItem(item, i)">Use Item</button>
+              <button type="button" class="btn useItem" (click)="childCurrentCharacter.useItem(item, i); hideItems()">Use Item</button>
             </div>
           </div>
         </div>
     </div>
-    <div class="container" id="battleLog">
-      
-    </div>
     <br><br>
+  </div>
+  <div class="container" id="battleLogContainer">
+    <h4>BATTLE LOG</h4>
+    <hr>
+    <div id="log">
+
+    </div>
   </div>
 </div>
