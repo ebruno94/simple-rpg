@@ -25,14 +25,14 @@
         <div class="row">
             <div class="col-md-4">
                 <h4>Basic Attack</h4>
-                <button type="button" class="btn" (click)="charAttack(); monsterAttack(); ifDead()">ATTACK</button>
+                <button type="button" class="btn" (click)="charAttack(); ifDead(); monsterAttack(); ">ATTACK</button>
             </div>
             <div class="col-md-4">
                 <h4>Cast an Ability</h4>
                 <select #selectedAbility>
                     <option *ngFor="let ability of childCurrentCharacter.abilities; let i = index" [value]="i">{{ability.name}}</option>
                 </select><br><br>
-                <button type="button" class="btn" (click)="childCurrentCharacter.abilities[selectedAbility.value].cast(childCurrentCharacter, currentMonster); currentMonster.attack(childCurrentCharacter); ifDead()">CAST</button>
+                <button type="button" class="btn" (click)="childCurrentCharacter.abilities[selectedAbility.value].cast(childCurrentCharacter, currentMonster); ifDead(); currentMonster.attack(childCurrentCharacter);">CAST</button>
             </div>
             <div class="col-md-4">
               <button type="button" class="btn" (click)="showItems()">Items</button>

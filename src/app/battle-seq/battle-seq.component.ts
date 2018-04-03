@@ -50,6 +50,6 @@ export class BattleSeqComponent {
 
   hideItems(){
     document.getElementById("itemList").style.display = "none";
-    document.getElementById("battleLogContainer").style.display = "none";
+    document.getElementById("battleLogContainer").style.display = "block";
   }
 }
