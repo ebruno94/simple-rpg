@@ -9,6 +9,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CharacterDisplayComponent } from './character-display/character-display.component';
 import { BattleSeqComponent } from './battle-seq/battle-seq.component';
 
+import { routing } from './app.routing';
+
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -31,7 +33,8 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
