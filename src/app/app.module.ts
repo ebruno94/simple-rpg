@@ -9,6 +9,17 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CharacterDisplayComponent } from './character-display/character-display.component';
 import { BattleSeqComponent } from './battle-seq/battle-seq.component';
 
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  sotrageBucket: masterFirebaseConfig.storageBucket
+};
+
 @NgModule({
   declarations: [
     AppComponent,
