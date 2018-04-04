@@ -1,8 +1,6 @@
 img{
     border: 2px solid #0E0D12;
     box-shadow: 0px 0px 15px white;
-    height: 300px;
-    widht: 250px;
 }
 
 h1, label, p, h4{
@@ -15,6 +13,6 @@ label{
   font-size: 25px;
 }
 
-button{
+#characterCreationForm button{
   margin-bottom: 100px;
 }

@@ -14,6 +14,7 @@ import { routing } from './app.routing';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { CharacterSelectComponent } from './character-select/character-select.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -28,7 +29,8 @@ export const firebaseConfig = {
     CharacterCreateComponent,
     WelcomeComponent,
     CharacterDisplayComponent,
-    BattleSeqComponent
+    BattleSeqComponent,
+    CharacterSelectComponent
   ],
   imports: [
     BrowserModule,

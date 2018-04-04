@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CharacterCreateComponent } from './character-create/character-create.component';
+import { CharacterDisplayComponent } from './character-display/character-display.component';
 
 const appRoutes: Routes = [
   {
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
   {
     path: 'create',
     component: CharacterCreateComponent
+  },
+  {
+    path: 'display',
+    component: CharacterDisplayComponent
   }
 ];
 

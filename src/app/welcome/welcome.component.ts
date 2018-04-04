@@ -11,7 +11,6 @@ export class WelcomeComponent {
   childStartButtonClicked: boolean = false;
 
   childStartGame(){
-    console.log("Child Start Game");
     this.childStartButtonClicked = true;
     this.childStartButton.emit();
   }
