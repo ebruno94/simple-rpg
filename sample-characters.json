@@ -1,0 +1,56 @@
+{
+  "players": [{
+    "name": "Ernest",
+    "username": "ernnex",
+    "password": "ernnex",
+    "characters": [{
+        "name": "Nexticus",
+        "id": "1",
+        "charClass": "Skirmisher",
+        "stats": {
+          "hp": "100",
+          "maxHp": "100",
+          "mp": "75",
+          "maxMp": "75",
+          "str": "7",
+          "int": "6",
+          "dex": "10",
+          "luck": "5",
+          "def": "5",
+          "level": "1",
+          "exp": "0",
+          "maxExp": "100"
+        },
+        "img":"https://img00.deviantart.net/2230/i/2017/035/0/8/dailyknight_8_by_rotaken-daxuj42.png",
+        "items": [{
+          "smHPPot": {
+            "name": "Health Vial",
+            "stat": "hp",
+            "change": "25"
+          },
+          "smMPPot": {
+            "name": "Mana Vial",
+            "stat": "mp",
+            "change": "25"
+          }
+        }],
+        "abilities": [{
+          "heal": {
+            "name": "Heal",
+            "cost": "15",
+            "numEffect": "20"
+          },
+          "block": {
+            "name": "Block",
+            "cost": "5",
+            "numEffect": "5"
+          },
+          "poisonSlash": {
+            "name": "Poison Slash",
+            "cost": "25",
+            "numEffect": "25"
+          }
+        }]
+      }]
+    }]
+  }

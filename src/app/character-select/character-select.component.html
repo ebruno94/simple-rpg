@@ -3,7 +3,7 @@
   <h1>SELECT A CHARACTER</h1>
   <hr>
   <div class="row">
-    <div *ngFor="let character of currentPlayer.characters; let i = index;">
+    <div *ngFor="let character of players[0].characters | async; let i = index;">
       <div class="col-md-4">
         <div *ngIf="character !== null; else filler">
           <div class="card characterExist" style="cursor: pointer">
