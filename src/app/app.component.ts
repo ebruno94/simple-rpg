@@ -9,14 +9,12 @@ import { Monster, monsterFactory } from './models/Monster';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  startClicked: boolean = false;
   currentCharacter: Character = null;
   currentMonster: Monster = null;
   isFighting: boolean = false;
 
   setCurrentCharacter(newCharacter: Character){
     this.currentCharacter = newCharacter;
-    this.startClicked = false;
   }
 
   setCurrentMonster(){
@@ -29,7 +27,4 @@ export class AppComponent {
     this.isFighting = !this.isFighting;
   }
 
-  startGame(){
-    this.startClicked = true;;
-  }
 }

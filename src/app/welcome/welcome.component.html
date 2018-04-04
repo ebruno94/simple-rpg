@@ -1,8 +1,6 @@
-<div *ngIf="!childStartButtonClicked">
-  <div class="jumbotron" id="welcomeBanner">
-    <h1>Simple RPG</h1>
-    <hr>
-    <br>
-    <button type="button" name="button" class="btn" (click)="childStartGame()">START GAME!</button>
-  </div>
+<div class="jumbotron" id="welcomeBanner">
+  <h1>Simple RPG</h1>
+  <hr>
+  <br>
+  <a routerLink="create"><button type="button" name="button" class="btn">START GAME!</button></a>
 </div>
