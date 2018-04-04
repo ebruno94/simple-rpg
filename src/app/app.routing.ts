@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CharacterCreateComponent } from './character-create/character-create.component';
+import { CharacterSelectComponent } from './character-select/character-select.component';
 import { CharacterDisplayComponent } from './character-display/character-display.component';
 
 const appRoutes: Routes = [
@@ -15,7 +16,11 @@ const appRoutes: Routes = [
     component: CharacterCreateComponent
   },
   {
-    path: 'display',
+    path: 'select',
+    component: CharacterSelectComponent
+  },
+  {
+    path: 'game',
     component: CharacterDisplayComponent
   }
 ];

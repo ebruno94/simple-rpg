@@ -1,43 +1,35 @@
 <div class="container" id="characterSelect">
-  <br><br><br><br>
+  <br>
   <h1>SELECT A CHARACTER</h1>
   <hr>
-  <div class="row">
-    <div class="col-md-4" id="slot1">
-      <div class="card">
-        <div *ngIf="playerHasCharAt1; else filler1">
-          <img src="{{currentCharacter.imgUrl}}">
-          <h2>{{currentCharacter.name}}</h2>
-          <h4>{{currentCharacter.charClass}}</h4>
-        </div>
-        <div #filler1 class="text-center">
-          <button class="btn">Create Character</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4" id="slot2">
-      <div class="card">
-        <div *ngIf="playerHasCharAt2; else filler2">
-          <img src="{{currentCharacter.imgUrl}}">
-          <h2>{{currentCharacter.name}}</h2>
-          <h4>{{currentCharacter.charClass}}</h4>
-        </div>
-        <div #filler2 class="text-center">
-          <button class="btn">Create Character</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4" id="slot3">
-      <div class="card">
-        <div *ngIf="playerHasCharAt3; else filler3">
-          <img src="{{currentCharacter.imgUrl}}">
-          <h2>{{currentCharacter.name}}</h2>
-          <h4>{{currentCharacter.charClass}}</h4>
-        </div>
-        <div #filler3 class="text-center">
-          <button class="btn">Create Character</button>
+  <form>
+    <div class="row">
+      <div *ngFor="let character of currentPlayer.characters; let i = index;">
+        <div class="col-md-4">
+          <div *ngIf="character !== null; else filler">
+            <div class="card characterExist" style="cursor: pointer">
+              <label>
+                <input type="radio" name="char" value="char1">
+                <img src="{{character.img}}">
+                <div class="charInfo">
+                  <h2>{{character.name}}</h2>
+                  <h4>{{character.charClass}}</h4>
+                </div>
+              </label>
+            </div>
+          </div>
+          <ng-template #filler>
+            <div class="card">
+              <br><br><br><br><br><br>
+              <a routerLink="../create"><button class="btn">Create  Character</button></a>
+            </div>
+          </ng-template>
         </div>
       </div>
     </div>
-  </div>
+    <br><br>
+    <div class="text-center">
+      <a routerLink="../display"><button class="btn" name="button">Start Game</button></a>
+    </div>
+  </form>
 </div>
