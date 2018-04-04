@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     component: CharacterSelectComponent
   },
   {
-    path: 'game',
+    path: 'game/:id',
     component: CharacterDisplayComponent
   }
 ];

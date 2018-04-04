@@ -2,34 +2,32 @@
   <br>
   <h1>SELECT A CHARACTER</h1>
   <hr>
-  <form>
-    <div class="row">
-      <div *ngFor="let character of currentPlayer.characters; let i = index;">
-        <div class="col-md-4">
-          <div *ngIf="character !== null; else filler">
-            <div class="card characterExist" style="cursor: pointer">
-              <label>
-                <input type="radio" name="char" value="char1">
-                <img src="{{character.img}}">
-                <div class="charInfo">
-                  <h2>{{character.name}}</h2>
-                  <h4>{{character.charClass}}</h4>
-                </div>
-              </label>
-            </div>
+  <div class="row">
+    <div *ngFor="let character of currentPlayer.characters; let i = index;">
+      <div class="col-md-4">
+        <div *ngIf="character !== null; else filler">
+          <div class="card characterExist" style="cursor: pointer">
+            <label>
+              <input [(ngModel)]="charValue" type="radio" name="char" [value]="character">
+              <img src="{{character.img}}">
+              <div class="charInfo">
+                <h2>{{character.name}}</h2>
+                <h4>{{character.charClass}}</h4>
+              </div>
+            </label>
           </div>
-          <ng-template #filler>
-            <div class="card">
-              <br><br><br><br><br><br>
-              <a routerLink="../create"><button class="btn">Create  Character</button></a>
-            </div>
-          </ng-template>
         </div>
+        <ng-template #filler>
+          <div class="card">
+            <br><br><br><br><br><br>
+            <a routerLink="../create"><button class="btn">Create  Character</button></a>
+          </div>
+        </ng-template>
       </div>
     </div>
-    <br><br>
-    <div class="text-center">
-      <a routerLink="../display"><button class="btn" name="button" (click)="setCharacter(char.value);">Start Game</button></a>
-    </div>
-  </form>
+  </div>
+  <br><br>
+  <div class="text-center">
+    <a routerLink="../game/:id"><button class="btn" name="button" (click)="goDisplayPage();">Start Game</button></a>
+  </div>
 </div>

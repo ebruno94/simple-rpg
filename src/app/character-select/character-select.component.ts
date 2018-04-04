@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Player } from './../models/Player';
 import { Character } from './../models/Character';
 
+import { Router } from '@angular/router'
+
 @Component({
   selector: 'app-character-select',
   templateUrl: './character-select.component.html',
@@ -9,15 +11,16 @@ import { Character } from './../models/Character';
 })
 export class CharacterSelectComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  selectedCharacter: Character;
+  public charValue: any;
   currentPlayer: Player = new Player("Ernest", "ernnex", "ernnex");
 
-  setCharacter(char){
-    this.selectedCharacter = char;
+  goDisplayPage(selectedCharacter: Character){
+    console.log(this.charValue);
+    this.router.navigate(['game', this.charValue.id]);
   }
 }

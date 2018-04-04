@@ -12,14 +12,14 @@ export class CharacterCreateComponent{
 
   childCurrentCharacter: Character = null;
 
-  createCharacter(name: string, charClass: string){
+  createCharacter(name: string, id: number, charClass: string){
     let newCharacter: Character = null;
     if (charClass === "Vanguard"){
-      newCharacter = new Vanguard(name);
+      newCharacter = new Vanguard(name, id);
     } else if (charClass === "Skirmisher"){
-      newCharacter = new Skirmisher(name);
+      newCharacter = new Skirmisher(name, id);
     } else if (charClass === "Elementalist"){
-      newCharacter = new Elementalist(name);
+      newCharacter = new Elementalist(name, id);
     }
 
     this.childCurrentCharacter = newCharacter;
