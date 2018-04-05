@@ -3,11 +3,13 @@ import { Character, Vanguard, Skirmisher, Elementalist } from './../models/Chara
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { CharacterService } from './../character.service';
 
 @Component({
   selector: 'app-character-create',
   templateUrl: './character-create.component.html',
-  styleUrls: ['./character-create.component.css']
+  styleUrls: ['./character-create.component.css'],
+  providers: [ CharacterService ]
 })
 export class CharacterCreateComponent implements OnInit{
   @Output() sendCurrentCharacter = new EventEmitter();
@@ -16,12 +18,15 @@ export class CharacterCreateComponent implements OnInit{
   childCurrentCharacter: Character = null;
 
   userId;
+  charId;
 
   constructor(private route: ActivatedRoute, private location: Location,
-  private router: Router){}
+  private router: Router, private characterService: CharacterService){}
   ngOnInit(){
     this.route.params.forEach((urlParams)=> {
       this.userId = urlParams['userId'];
+      this.charId = urlParams['charId'];
+      console.log("charId is initially set to" + this.charId);
     })
   }
 
@@ -36,7 +41,10 @@ export class CharacterCreateComponent implements OnInit{
     }
 
     this.childCurrentCharacter = newCharacter;
+    console.log("this is charId before being passed: " + this.charId);
+    this.characterService.addCharacter(newCharacter, this.charId, this.userId);
     this.sendCurrentCharacter.emit(newCharacter);
+    // this.router.navigate(['select', this.userId])
   }
 
   backToSelect(){

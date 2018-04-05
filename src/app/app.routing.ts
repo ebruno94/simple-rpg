@@ -12,7 +12,7 @@ const appRoutes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: 'create/:userId/:characterId',
+    path: 'create/:userId/:charId',
     component: CharacterCreateComponent
   },
   {

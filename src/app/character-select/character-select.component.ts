@@ -36,6 +36,8 @@ export class CharacterSelectComponent implements OnInit {
   }
 
   goCreateChar(userId, charId){
+    console.log('userId = ' + userId);
+    console.log('charId = ' + charId);
     this.router.navigate(['create', userId, charId]);
   }
 

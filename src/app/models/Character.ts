@@ -9,6 +9,7 @@ export class Character{
 
   items: Item[] = [itemsLibrary.smHPPot(), itemsLibrary.smMPPot()];
   abilities = [];
+  key;
 
   useItem(myItem, index){
     myItem.useItem(this);
