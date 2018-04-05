@@ -35,6 +35,9 @@ export class CharacterSelectComponent implements OnInit {
     console.log(`Player Observe: ${this.playerObserve}`);
   }
 
+  goCreateChar(userId, charId){
+    this.router.navigate(['create', userId, charId]);
+  }
 
   goDisplayPage(selectedCharacter: Character){
     console.log(this.charValue);

@@ -12,11 +12,11 @@ const appRoutes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: 'create',
+    path: 'create/:userId/:characterId',
     component: CharacterCreateComponent
   },
   {
-    path: ':userId/select',
+    path: 'select/:userId',
     component: CharacterSelectComponent
   },
   {
