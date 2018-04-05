@@ -1,11 +1,12 @@
 <div class="container" id="characterSelect">
   <br>
   <h1>SELECT A CHARACTER</h1>
+  <p (click)="checkLog()">LOL</p>
   <hr>
   <div class="row">
-    <div *ngFor="let character of players[0].characters | async; let i = index;">
+    <div *ngFor="let character of (playerObserve | async)?.characters; let i = index;">
       <div class="col-md-4">
-        <div *ngIf="character !== null; else filler">
+        <div *ngIf="character.name !== empty; else filler">
           <div class="card characterExist" style="cursor: pointer">
             <label>
               <input [(ngModel)]="charValue" type="radio" name="char" [value]="character">

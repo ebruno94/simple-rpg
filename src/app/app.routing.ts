@@ -16,7 +16,7 @@ const appRoutes: Routes = [
     component: CharacterCreateComponent
   },
   {
-    path: 'select',
+    path: ':userId/select',
     component: CharacterSelectComponent
   },
   {

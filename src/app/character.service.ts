@@ -5,13 +5,22 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class CharacterService {
-  players: FirebaseListObservable<any[]>
-  constructor(private database: AngularFireDatabase) {
-    this.players = database.list('players');
-  }
+  playersObserve: FirebaseListObservable<any[]>
+  players;
 
-  getChar(){
+  constructor(private database: AngularFireDatabase) {
+    this.playersObserve = database.list('players');
+    this.playersObserve.subscribe(data=>{
+      this.players = data;
+      })
+    }
+
+  getPlayers(){
     return this.players;
   }
-  getCharacterById(charId: number){}
-}
+
+  getPlayerById(userId){
+    let myPlayer = this.database.object('players/' + userId)
+      return myPlayer;
+    }
+  }
