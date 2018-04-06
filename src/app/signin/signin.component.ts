@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerService } from '../player.service';
 import { Player } from '../models/Player';
-import { FirebaseObjectObservable } from 'angularfire2/database';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { CharacterService } from '../character.service';
 
 @Component({
@@ -13,8 +13,9 @@ import { CharacterService } from '../character.service';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private router: Router, private playerService: PlayerService, private characterService: CharacterService) { }
+  constructor(private router: Router, private playerService: PlayerService, private characterService: CharacterService) {}
 
+  currentPlayer: FirebaseObjectObservable<any>;
   ngOnInit() {
   }
 
@@ -28,9 +29,19 @@ export class SigninComponent implements OnInit {
     this.router.navigate(['register']);
   }
 
-  goToSelect(){
-    this.router.navigate(['select', 'guest']);
-    this.characterService.createCharacterSlots();
+  playAsGuest(){
+    let randomId = Math.floor(Math.random() * 1000000);
+    let newPlayer = new Player("guest" + randomId, "null", "null");
+    this.playerService.addPlayer(newPlayer);
+    this.routeToSelect();
+  }
+
+  routeToSelect(){
+    this.playerService.recentlyAddedPlayer.subscribe(
+      data=>{
+        this.router.navigate(['select', data.$key]);
+      }
+    )
   }
 
 }
