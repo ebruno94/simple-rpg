@@ -66,8 +66,13 @@
           </div>
       </div>
       <hr>
-      <div class="text-center">
-        <a routerLink="../game"> <button type="button" class="btn" (click)="createCharacter(charName.value, charClassSelect.value);"> Create Character </button> </a>
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <button type="button" class="btn" (click)="goToSelect();"> Cancel </button>
+        </div>
+        <div class="col-md-6 text-center">
+          <button type="button" class="btn" (click)="createCharacter(charName.value, charClassSelect.value);"> Create Character </button>
+        </div>
       </div>
   </form>
 </div>

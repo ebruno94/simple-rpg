@@ -17,15 +17,6 @@ export class CharacterService {
     this.charactersObserve.push(new Filler("---", Math.floor(Math.random() * 1000)));
   }
 
-  addCharacter(newChar: Character, charId, userId){
 
-  }
 
-  getCharacterByKey(key, userId){
-
-  }
-
-  getPlayerById(userId){
-
-  }
 }

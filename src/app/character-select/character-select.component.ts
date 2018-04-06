@@ -28,7 +28,6 @@ export class CharacterSelectComponent implements OnInit {
       this.playerId = urlParametersArray['playerId'];
     });
     this.playerService.players.subscribe(data=>{
-      console.log(data);
       for(let somePlayer of data){
         if(somePlayer.name === this.playerId){
           this.player = somePlayer;
@@ -40,7 +39,6 @@ export class CharacterSelectComponent implements OnInit {
   public charValue: any;
 
   goDisplayPage(selectedCharacter: Character){
-    console.log(this.charValue);
     this.router.navigate(['game', this.charValue.id]);
   }
 

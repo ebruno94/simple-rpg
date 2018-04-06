@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Player } from './models/Player';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { firebaseConfig } from './app.module';
+import { Character } from './models/Character';
 
 @Injectable()
 export class PlayerService {
@@ -30,6 +31,20 @@ export class PlayerService {
 
   getPlayerByKey(key){
     return this.database.object('/players/' + key);
+  }
+
+  addCharacter(newChar: Character, player, characterId){
+    console.log(newChar);
+    console.log(player.characters);
+    console.log(characterId);
+    console.log("Current Player is " + this.currentPlayer)
+    let tempChar;
+    for (let character of player.characters){
+      if (parseInt(character.id) === parseInt(characterId)){
+        tempChar = character;
+      }
+    }
+    tempChar.update(newChar);
   }
 
 }
