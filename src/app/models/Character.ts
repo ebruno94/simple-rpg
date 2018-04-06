@@ -73,3 +73,9 @@ export class Elementalist extends Character{
     this.abilities = [abilitiesLibrary.heal, abilitiesLibrary.block, abilitiesLibrary.soulBeat];
   }
 }
+
+export class Filler extends Character{
+  constructor(name = "---", id){
+    super(name, id, "Skirmisher", 0, 0, 0, 0, 0, 0, 0, 0 ,0, '');
+  }
+}

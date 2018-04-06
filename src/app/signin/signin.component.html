@@ -13,7 +13,14 @@
         <label>Password:</label><br>
         <input #password type="password">
       </div><br>
-      <button class="btn" name="button" (click)="verify(userName.value, password.value);">Login</button>
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <button class="btn" name="button" (click)="verify(userName.value, password.value);">Login</button>
+        </div>
+        <div class="col-md-6 text-center">
+          <button class="btn" (click)="goToSelect()">PLAY AS GUEST</button>
+        </div>
+      </div>
     </div>
   </div>
   <br><hr>

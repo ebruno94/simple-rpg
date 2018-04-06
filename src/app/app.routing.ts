@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     component: CharacterCreateComponent
   },
   {
-    path: 'select',
+    path: 'select/:playerId',
     component: CharacterSelectComponent
   },
   {
