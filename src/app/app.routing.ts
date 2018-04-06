@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'create',
+    path: 'create/:playerId/:charId',
     component: CharacterCreateComponent
   },
   {

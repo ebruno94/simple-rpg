@@ -3,7 +3,7 @@
   <h1>SELECT A CHARACTER</h1>
   <hr>
   <div class="row">
-    <div *ngFor="let character of player.characters">
+    <div *ngFor="let character of player.characters; let i = index">
       <div class="col-md-4">
         <div *ngIf="character.name !== '---'; else filler">
           <div class="card characterExist" style="cursor: pointer">
@@ -20,7 +20,7 @@
         <ng-template #filler>
           <div class="card">
             <br><br><br><br><br><br>
-            <a routerLink="../create"><button class="btn">Create  Character</button></a>
+            <button class="btn" (click)="goCreateChar(character)">Create Character</button>
           </div>
         </ng-template>
       </div>

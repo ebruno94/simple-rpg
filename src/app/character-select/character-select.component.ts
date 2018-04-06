@@ -44,4 +44,8 @@ export class CharacterSelectComponent implements OnInit {
     this.router.navigate(['game', this.charValue.id]);
   }
 
+  goCreateChar(character){
+    this.router.navigate(['create',this.playerId , character.id])
+  }
+
 }
