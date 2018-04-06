@@ -17,8 +17,8 @@ import { Location } from '@angular/common'
   providers: [PlayerService]
 })
 export class CharacterSelectComponent implements OnInit {
-  players: FirebaseListObservable<any[]>;
   currentPlayer: FirebaseObjectObservable<any>;
+  player;
   playerId;
 
   constructor(private route: ActivatedRoute, private location: Location, private router: Router, private playerService: PlayerService) {  }
@@ -27,7 +27,14 @@ export class CharacterSelectComponent implements OnInit {
     this.route.params.forEach((urlParametersArray)=> {
       this.playerId = urlParametersArray['playerId'];
     });
-    this.currentPlayer = this.playerService.getPlayerByKey(this.playerId);
+    this.playerService.players.subscribe(data=>{
+      console.log(data);
+      for(let somePlayer of data){
+        if(somePlayer.name === this.playerId){
+          this.player = somePlayer;
+        }
+      }
+    });
   }
 
   public charValue: any;
@@ -37,6 +44,4 @@ export class CharacterSelectComponent implements OnInit {
     this.router.navigate(['game', this.charValue.id]);
   }
 
-  checkLog(){
-  }
 }
