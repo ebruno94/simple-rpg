@@ -1,0 +1,21 @@
+.container{
+  background-image: url('https://i.pinimg.com/originals/73/e7/1f/73e71fd636407bd0e659f0f664dd136a.png');
+  background-repeat: no-repeat;
+  background-size: 1110px 800px;
+  height: 900px;
+  padding: 100px;
+  text-align: center;
+  padding-top: 150px;
+}
+
+img{
+  height: 300px;
+  width: 250px;
+  border-bottom: 1px solid black;
+}
+
+h1, h2, label, p, h4{
+  font-family: 'MedievalSharp', cursive;
+  font-weight: bold;
+  text-shadow: 0px 0px 40px white;
+}
