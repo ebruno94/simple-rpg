@@ -1,6 +1,6 @@
-import { Character, Skirmisher } from './Character';
+import { Character, Skirmisher, Vanguard, Elementalist } from './Character';
 
 export class Player{
   constructor(public name: string, public userName: string, public password: string){}
-  characters: Character[] = [new Skirmisher("Nexticus", 1), null, null];
+  characters: Character[];
 }
