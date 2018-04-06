@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
@@ -6,6 +7,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
+  constructor(private router: Router){}
   @Output() childStartButton = new EventEmitter();
 
   childStartButtonClicked: boolean = false;
@@ -13,5 +15,9 @@ export class WelcomeComponent {
   childStartGame(){
     this.childStartButtonClicked = true;
     this.childStartButton.emit();
+  }
+
+  goToSignIn(){
+    this.router.navigate(['signin']);
   }
 }
