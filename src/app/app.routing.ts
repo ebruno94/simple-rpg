@@ -6,6 +6,7 @@ import { CharacterCreateComponent } from './character-create/character-create.co
 import { CharacterSelectComponent } from './character-select/character-select.component';
 import { CharacterDisplayComponent } from './character-display/character-display.component';
 import { SigninComponent } from './signin/signin.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
   {
